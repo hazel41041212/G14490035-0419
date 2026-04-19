@@ -1,9 +1,9 @@
 {
-    "brand": "GreenPath Select",
+    "brand": "ESG Marketplace",
     "nav": {
         "home": "Home",
         "products": "Products",
-        "redeem": "Redeem",
+        "redeem": "Points redeem",
         "cart": "Cart",
         "sell": "Sell",
         "profile": "Profile",
@@ -12,45 +12,83 @@
         "authLogout": "Sign out"
     },
     "products": {
-        "title": "Products | GreenPath Select"
+        "title": "Products | ESG Marketplace",
+        "heading": "Products",
+        "lead": "Buy sustainable / ESG items and earn green points (local demo). List items under Sell to earn points too.",
+        "addCart": "Add to cart",
+        "toastAdded": "Added to cart"
     },
     "redeemPage": {
-        "title": "Redeem & activity | GreenPath Select",
-        "heading": "Member ID, points & transactions"
+        "title": "Redeem | ESG Marketplace",
+        "heading": "Redeem points for shopping credit",
+        "lead": "Similar to iPASS MONEY green points or bookstore loyalty: earn by buying and selling, redeem into shopping credit at checkout. Partner offers (e.g. iPASS MONEY) can be added later.",
+        "balancePoints": "Green points",
+        "balanceCredit": "Shopping credit (NT$)",
+        "redeemLabel": "Points to redeem",
+        "redeemBtn": "Convert to shopping credit",
+        "ratioNote": "Demo: 1 point = NT$1 credit (ratio can be configured later).",
+        "partnerNote": "Future: integrate with iPASS MONEY and other partners.",
+        "afterRedeem": "Done! Credit updated (local only).",
+        "legacyTitle": "Realtime Database lab (optional)",
+        "legacyHint": "RFID / RTDB demo below; separate from shopping credit above."
     },
     "home": {
-        "title": "ESG Shop | Home",
-        "welcome": "Sustainable living starts with every purchase",
-        "description": "Shop ESG-focused products to earn green points and redeem more sustainable goods and giving opportunities",
+        "title": "ESG Marketplace | Home",
+        "welcome": "Sustainable trade starts with every order",
+        "description": "List and buy ESG products—earn green points and redeem shopping credit.",
         "badgeEsg": "Environment · Social · Governance",
-        "esg1": "Curated ESG products you can stand behind",
-        "esg2": "We select items aligned with environmental care, social fairness, and transparent governance—from reduced packaging and fair trade to carbon footprint disclosure—so your spending matches your values. Every order supports a more sustainable supply chain.",
-        "points1": "Earn green points, redeem with purpose",
-        "points2": "Members earn green points based on purchase amount and product type (see product pages and campaign notices for rules). Points can be redeemed for selected sustainable items, charity partnerships, or exclusive perks.",
-        "local1": "Food, farming, and local—everyday low-carbon choices",
-        "local2": "From organic and food-waste reduction to local growers and plant-forward options, we want meals to be part of your carbon-light routine. These categories often earn bonus green points for you and your household.",
-        "redeem1": "Redeem: turn points into the next good action",
-        "redeem2": "Check your balance and redemption history in Profile. When Firebase is connected, you’ll see points, history, and a simple personal impact summary.",
-        "browseTitle": "Browse",
-        "browseHint": "See the products page for the full list (you can replace images later)."
+        "esg1": "Earn on both sides",
+        "esg2": "Points for purchases and for successful listings. With a cloud database, accounts and history will sync across devices.",
+        "points1": "Two ways to use points",
+        "points2": "Checkout discounts using shopping credit and point offset, or redeem partner offers in the future.",
+        "local1": "Points that fit daily life",
+        "local2": "Like transit or bookstore rewards—making sustainable choices visible and cumulative.",
+        "redeem1": "Redeem",
+        "redeem2": "Go to Points redeem to convert points to shopping credit.",
+        "browseTitle": "Featured",
+        "browseHint": "See Products to add items to your cart."
     },
     "sell": {
-        "title": "Sell | GreenPath Select",
-        "heading": "List a sustainable product",
-        "lead": "Fill in product details here (writes to the database once Firebase is wired)."
+        "title": "Sell | ESG Marketplace",
+        "heading": "List a product",
+        "lead": "Submit details (saved locally for now). A small point reward is granted on submit; connect a database for real listings.",
+        "nameLabel": "Product name",
+        "priceLabel": "Price (NT$)",
+        "esgLabel": "ESG / sustainability note",
+        "submitBtn": "Submit listing",
+        "toastOk": "Listing saved (local). Points granted (demo)."
     },
     "cart": {
-        "title": "Cart | GreenPath Select",
-        "heading": "Shopping cart",
-        "empty": "Your cart is empty. Browse the home page to shop."
+        "title": "Cart | ESG Marketplace",
+        "heading": "Cart",
+        "lead": "Apply shopping credit and green points (local demo). Points are earned on the amount you pay.",
+        "empty": "Your cart is empty. Add items from Products.",
+        "colProduct": "Item",
+        "colPrice": "Price",
+        "colQty": "Qty",
+        "colSub": "Line total",
+        "remove": "Remove",
+        "subtotal": "Subtotal",
+        "useCredit": "Shopping credit (NT$)",
+        "usePoints": "Points to use",
+        "pointsHelp": "10 points = NT$1 off; max 30% of payable after credit.",
+        "availCredit": "Available credit",
+        "availPoints": "Available points",
+        "checkout": "Checkout (demo)",
+        "toastOk": "Checkout complete! Points and history updated (local)."
     },
     "profile": {
-        "title": "Profile | GreenPath Select",
-        "heading": "Profile & green points",
-        "lead": "After sign-in, view your point balance and order history here."
+        "title": "Profile | ESG Marketplace",
+        "heading": "Profile",
+        "lead": "Local demo of points, credit, and history. Connect Firebase etc. for real accounts.",
+        "cardPoints": "Green points",
+        "cardCredit": "Shopping credit (NT$)",
+        "ledgerTitle": "Activity",
+        "listingTitle": "My listings (local)",
+        "emptyLedger": "No activity yet."
     },
     "login": {
-        "title": "Sign in | GreenPath Select",
+        "title": "Sign in | ESG Marketplace",
         "heading": "Sign in or register",
         "lead": "Email and social sign-in will appear here once Firebase Authentication is enabled.",
         "demoBtn": "Demo: mark as signed in (local)"

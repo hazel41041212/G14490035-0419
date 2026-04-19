@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESG 永續選品｜首頁</title>
+    <title>ESG 商品交易平台｜首頁</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -14,7 +14,7 @@
 <body data-page="home">
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html" id="nav-brand">綠行選品</a>
+            <a class="navbar-brand" href="index.html" id="nav-brand">ESG 商品交易平台</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,7 +29,7 @@
                         <a class="nav-link" data-nav="products" href="products.html" id="nav-products">商品介紹</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-nav="redeem" href="redeem.html" id="nav-redeem">兌換商品</a>
+                        <a class="nav-link" data-nav="redeem" href="redeem.html" id="nav-redeem">綠點兌換</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-nav="cart" href="cart.html" id="nav-cart">購物車</a>
@@ -75,7 +75,7 @@
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <span class="points-badge" id="badge-esg">Environment · Social · Governance</span>
                     <h3 class="section-heading" id="esg1">精選 ESG 商品，看得見的責任</h3>
-                    <p id="esg2"></p>
+                    <p id="esg2">我們嚴選具環境友善、社會公平與透明治理精神的商品，從包裝減塑、公平貿易到碳足跡揭露，讓你的消費與價值觀一致。每一次下單，都是對永續供應鏈的支持。</p>
                 </div>
             </div>
         </div>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="col-md-6 order-md-1" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="section-heading" id="points1">購物累積綠點，兌換更聰明</h3>
-                    <p id="points2"></p>
+                    <p id="points2">會員於本站消費可依金額與品項累積綠點（實際規則以商品頁與活動公告為準）。累積的點數可用於兌換指定永續商品、合作公益專案或限定禮遇，讓回饋循環回到環境與社會。</p>
                 </div>
             </div>
         </div>
@@ -99,26 +99,14 @@
                 </div>
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="section-heading" id="local1">食農與在地，低碳日常提案</h3>
-                    <p id="local2"></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container mt-5 new-section" data-aos="fade-up">
-            <div class="row align-items-center">
-                <div class="col-md-6 order-md-2" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="section-heading" id="redeem1">兌換專區：點數變成下一個好的行動</h3>
-                    <p id="redeem2"></p>
-                </div>
-                <div class="col-md-6 order-md-1" data-aos="fade-up" data-aos-delay="200">
-                    <img src="picture/souvenir.jfif" alt="" class="img-fluid rounded shadow-sm">
+                    <p id="local2">從有機、減食物浪費到在地小農與植物基選擇，我們希望讓「吃」成為減碳行動的一環。選購這類品項通常可獲得額外綠點加成，鼓勵你與家人一起實踐更輕盈的餐桌。</p>
                 </div>
             </div>
         </div>
 
         <section id="browse-products" class="mt-5 mb-5" data-aos="fade-up">
             <h2 class="section-heading mb-3" id="browse-title">商品瀏覽</h2>
-            <p class="text-muted" id="browse-hint">更多品項見商品介紹頁（圖片可日後替換）。</p>
+            <p class="text-muted" id="browse-hint">更多品項見商品介紹頁。</p>
             <div class="row g-3 product-grid">
                 <div class="col-md-4">
                     <a href="products.html" class="text-decoration-none text-reset">
@@ -161,7 +149,7 @@
                 <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/line-me.png" alt="LINE" /></a>
                 <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/instagram-new.png" alt="Instagram" /></a>
             </div>
-            <p class="text-muted small mb-0">&copy; 2026 綠行選品 · ESG 永續電商示範</p>
+            <p class="text-muted small mb-0">&copy; 2026 ESG 商品交易平台</p>
         </div>
     </footer>
 
@@ -170,32 +158,45 @@
     <script src="js/greenmart-core.js"></script>
     <script>
         (async function () {
-            const lang = GreenMart.getLang();
-            const t = await GreenMart.loadTranslations(lang);
-            GreenMart.applyNavLabels(t);
-            GreenMart.wireNavLang();
-            GreenMart.setActiveNav();
-            GreenMart.attachAuthNav(t);
-            document.title = t.home.title;
             function set(id, text) {
                 const node = document.getElementById(id);
                 if (node) node.textContent = text;
             }
-            set('welcome-text', t.home.welcome);
-            set('description-text', t.home.description);
-            set('badge-esg', t.home.badgeEsg);
-            set('esg1', t.home.esg1);
-            set('esg2', t.home.esg2);
-            set('points1', t.home.points1);
-            set('points2', t.home.points2);
-            set('local1', t.home.local1);
-            set('local2', t.home.local2);
-            set('redeem1', t.home.redeem1);
-            set('redeem2', t.home.redeem2);
-            set('browse-title', t.home.browseTitle);
-            set('browse-hint', t.home.browseHint);
-            if (typeof AOS !== 'undefined') {
-                AOS.init({ duration: 1000, easing: 'ease-in-out', once: false });
+            try {
+                const lang = GreenMart.getLang();
+                const t = await GreenMart.loadTranslations(lang);
+                GreenMart.applyNavLabels(t);
+                GreenMart.wireNavLang();
+                GreenMart.setActiveNav();
+                GreenMart.attachAuthNav(t);
+                document.title = t.home.title;
+                set('welcome-text', t.home.welcome);
+                set('description-text', t.home.description);
+                set('badge-esg', t.home.badgeEsg);
+                set('esg1', t.home.esg1);
+                set('esg2', t.home.esg2);
+                set('points1', t.home.points1);
+                set('points2', t.home.points2);
+                set('local1', t.home.local1);
+                set('local2', t.home.local2);
+                set('redeem1', t.home.redeem1);
+                set('redeem2', t.home.redeem2);
+                set('browse-title', t.home.browseTitle);
+                set('browse-hint', t.home.browseHint);
+            } catch (err) {
+                console.warn(
+                    '[ESG 商品交易平台] 無法載入 lang/*.json（用檔案總管雙擊開啟時常見）。請用 VS Code Live Server 等本機伺服器開啟，或略過語系仍會保留頁面預設文字。',
+                    err
+                );
+                GreenMart.wireNavLang();
+                GreenMart.setActiveNav();
+                GreenMart.attachAuthNav({
+                    nav: { authLogin: '登入', authLogout: '登出', language: '語言' },
+                });
+            } finally {
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({ duration: 1000, easing: 'ease-in-out', once: false });
+                }
             }
         })();
     </script>

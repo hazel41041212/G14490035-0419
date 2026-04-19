@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>上架｜綠行選品</title>
+    <title>上架商品｜ESG 商品交易平台</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/components.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 <body data-page="sell">
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html" id="nav-brand">綠行選品</a>
+            <a class="navbar-brand" href="index.html" id="nav-brand">ESG 商品交易平台</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,7 +27,7 @@
                         <a class="nav-link" data-nav="products" href="products.html" id="nav-products">商品介紹</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-nav="redeem" href="redeem.html" id="nav-redeem">兌換商品</a>
+                        <a class="nav-link" data-nav="redeem" href="redeem.html" id="nav-redeem">綠點兌換</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-nav="cart" href="cart.html" id="nav-cart">購物車</a>
@@ -57,41 +57,42 @@
     </nav>
 
     <main class="container py-5">
-        <h1 class="section-heading" id="page-title">上架永續商品</h1>
+        <h1 class="section-heading" id="page-title">上架商品</h1>
         <p class="lead text-muted" id="page-lead"></p>
         <div class="card border-0 shadow-sm mt-4">
             <div class="card-body">
                 <form id="sell-form" class="row g-3">
                     <div class="col-12">
-                        <label class="form-label">商品名稱（示意）</label>
-                        <input type="text" class="form-control" disabled placeholder="接上 Firebase 後啟用">
+                        <label class="form-label" for="sell-name" id="lbl-sell-name">商品名稱</label>
+                        <input type="text" class="form-control" id="sell-name" required maxlength="120" placeholder="例：公平貿易咖啡掛耳包">
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label">價格</label>
-                        <input type="number" class="form-control" disabled placeholder="NT$">
+                        <label class="form-label" for="sell-price" id="lbl-sell-price">售價（NT$）</label>
+                        <input type="number" class="form-control" id="sell-price" required min="1" step="1" placeholder="199">
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label">ESG 標籤</label>
-                        <input type="text" class="form-control" disabled placeholder="例：公平貿易、減塑">
+                        <label class="form-label" for="sell-esg" id="lbl-sell-esg">ESG／永續說明</label>
+                        <input type="text" class="form-control" id="sell-esg" maxlength="200" placeholder="例：減塑包裝、產銷履歷">
                     </div>
                     <div class="col-12">
-                        <button type="button" class="btn btn-secondary" disabled>送出（待串接）</button>
+                        <button type="submit" class="btn btn-success" id="sell-submit-btn">送出上架</button>
                     </div>
                 </form>
             </div>
         </div>
     </main>
 
-    <div id="app-toast"></div>
+    <div id="toast-host" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
 
     <footer class="site-footer text-center py-4">
         <div class="container">
-            <p class="text-muted small mb-0">&copy; 2026 綠行選品</p>
+            <p class="text-muted small mb-0">&copy; 2026 ESG 商品交易平台</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/greenmart-core.js"></script>
+    <script src="js/greenmart-local.js"></script>
     <script src="js/sell.js"></script>
 </body>
 

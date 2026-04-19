@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>兌換與交易｜綠行選品</title>
+    <title>綠點兌換｜ESG 商品交易平台</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/components.css" rel="stylesheet">
@@ -15,7 +15,7 @@
 <body class="bg-light" data-page="redeem">
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html" id="nav-brand">綠行選品</a>
+            <a class="navbar-brand" href="index.html" id="nav-brand">ESG 商品交易平台</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,7 +30,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" data-nav="redeem" href="redeem.html" id="nav-redeem"
-                            aria-current="page">兌換商品</a>
+                            aria-current="page">綠點兌換</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-nav="cart" href="cart.html" id="nav-cart">購物車</a>
@@ -60,66 +60,104 @@
     </nav>
 
     <main class="container py-5">
-        <h1 class="text-center mb-4 section-heading" id="redeem-heading">會員 ID／綠點與交易紀錄</h1>
+        <h1 class="section-heading mb-3" id="redeem-heading">綠點兌換購物金</h1>
+        <p class="text-muted mb-4" id="redeem-lead"></p>
 
-        <div class="mb-3">
-            <label for="idInput" class="form-label">輸入 ID (RFID 掃描支援):</label>
-            <input type="text" id="idInput" class="form-control" placeholder="輸入完成請按下提交" />
-        </div>
-
-        <div class="mb-3">
-            <label for="productCodeInput" class="form-label">輸入商品代號:</label>
-            <input type="text" id="productCodeInput" class="form-control" placeholder="按下檢查商品可以檢查並自動輸入產品價格" />
-        </div>
-        <button id="checkProductButton" class="btn btn-primary flex-grow-1">檢查商品</button>
-
-        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="productModalLabel">商品確認</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body">
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <p class="small text-muted mb-1" id="lbl-balance-points"></p>
+                        <p class="h4 mb-0"><span id="display-points-main">0</span> <span class="fs-6">點</span></p>
                     </div>
-                    <div class="modal-body">
-                        <p id="productInfo">商品名稱: <span id="modalProductName"></span></p>
-                        <p>商品金額: <span id="modalProductPrice"></span> 元</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary" id="confirmProductButton">確認</button>
+                    <div class="col-md-6">
+                        <p class="small text-muted mb-1" id="lbl-balance-credit"></p>
+                        <p class="h4 mb-0">NT$ <span id="display-credit-main">0</span></p>
                     </div>
                 </div>
+                <label class="form-label" for="input-redeem-points-main" id="lbl-redeem-input"></label>
+                <div class="input-group" style="max-width: 22rem;">
+                    <input type="number" class="form-control" id="input-redeem-points-main" min="1" step="1"
+                        placeholder="例如 100">
+                    <button class="btn btn-success" type="button" id="btn-redeem-credit-main"></button>
+                </div>
+                <p class="form-text" id="redeem-ratio-note"></p>
+                <p class="form-text mb-0" id="redeem-partner-note"></p>
             </div>
         </div>
 
-        <div class="mb-3 mt-4">
-            <label for="amountInput" class="form-label">金額:</label>
-            <input type="number" id="amountInput" class="form-control" placeholder="輸入金額 (可為正數或負數)" />
-        </div>
+        <details class="border rounded bg-white p-3 shadow-sm">
+            <summary class="section-heading" style="cursor: pointer" id="legacy-summary">Realtime Database 測試區（選修）</summary>
+            <p class="small text-muted mt-2" id="legacy-hint"></p>
+            <hr>
+            <h2 class="h5 text-center mb-4" id="redeem-legacy-heading">會員 ID／交易測試</h2>
 
-        <div class="mb-3 d-flex gap-2 flex-wrap">
-            <button id="submitButton" class="btn btn-success flex-grow-1">提交</button>
-            <button id="checkBalanceButton" class="btn btn-info flex-grow-1">查詢目前餘額</button>
-            <button id="viewTransactionsButton" class="btn btn-warning flex-grow-1">查看交易紀錄與圖表</button>
-        </div>
+            <div class="mb-3">
+                <label for="idInput" class="form-label">輸入 ID (RFID 掃描支援):</label>
+                <input type="text" id="idInput" class="form-control" placeholder="輸入完成請按下提交" />
+            </div>
 
-        <div id="result" class="alert alert-info d-none"></div>
+            <div class="mb-3">
+                <label for="productCodeInput" class="form-label">輸入商品代號:</label>
+                <input type="text" id="productCodeInput" class="form-control" placeholder="按下檢查商品可以檢查並自動輸入產品價格" />
+            </div>
+            <button id="checkProductButton" class="btn btn-primary flex-grow-1">檢查商品</button>
 
-        <div id="transactionRecords" class="mt-4">
-            <h3>今日交易紀錄:</h3>
-            <ul class="list-group" id="transactionList"></ul>
-        </div>
+            <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="productModalLabel">商品確認</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="productInfo">商品名稱: <span id="modalProductName"></span></p>
+                            <p>商品金額: <span id="modalProductPrice"></span> 元</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary" id="confirmProductButton">確認</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <div id="chartContainer" class="mt-4">
-            <h3>消費金額變化圖:</h3>
-            <canvas id="transactionChart"></canvas>
-        </div>
+            <div class="mb-3 mt-4">
+                <label for="amountInput" class="form-label">金額:</label>
+                <input type="number" id="amountInput" class="form-control" placeholder="輸入金額 (可為正數或負數)" />
+            </div>
+
+            <div class="mb-3 d-flex gap-2 flex-wrap">
+                <button id="submitButton" class="btn btn-success flex-grow-1">提交</button>
+                <button id="checkBalanceButton" class="btn btn-info flex-grow-1">查詢目前餘額</button>
+                <button id="viewTransactionsButton" class="btn btn-warning flex-grow-1">查看交易紀錄與圖表</button>
+            </div>
+
+            <div id="result" class="alert alert-info d-none"></div>
+
+            <div id="transactionRecords" class="mt-4">
+                <h3>今日交易紀錄:</h3>
+                <ul class="list-group" id="transactionList"></ul>
+            </div>
+
+            <div id="chartContainer" class="mt-4">
+                <h3>消費金額變化圖:</h3>
+                <canvas id="transactionChart"></canvas>
+            </div>
+        </details>
     </main>
 
-    <div id="app-toast"></div>
+    <div id="toast-host" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <footer class="site-footer text-center py-4">
+        <div class="container">
+            <p class="text-muted small mb-0">&copy; 2026 ESG 商品交易平台</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/greenmart-core.js"></script>
+    <script src="js/greenmart-local.js"></script>
     <script src="js/redeem.js"></script>
 </body>
 
